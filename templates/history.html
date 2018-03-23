@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <table style="width:100%">
+      <tr>
+        <th>Action</th>
+        <th>Stock</th>
+        <th>Shares</th>
+        <th>Price</th>
+        <th>Date and time</th>
+      </tr>
+      {% for story in history %}
+      <tr>
+        <td>{{ story.action }}</td>
+        <td>{{ story.symbol }}</td>
+        <td>{{ story.shares }}</td>
+        <td>{{ story.price }}</td>
+        <td>{{story.time }}</td>
+      </tr>
+      {% endfor %}
+      </table>
+
+
+{% endblock %}
